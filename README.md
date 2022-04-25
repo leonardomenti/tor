@@ -14,6 +14,8 @@ anonymous communication over the internet. It is based on the onion routing
 protocol, an anonymization technique of communications in a 
 telecommunications network. 
 
+## What you need
 
+`brew install tor`
 
-
+`pip install 'requests[socks]'`
