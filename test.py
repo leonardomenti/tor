@@ -23,6 +23,3 @@ print('Elapsed time using Tor: ', tor_response.elapsed.total_seconds())
 print('Elapsed time without Tor: ', normal_response.elapsed.total_seconds())
 
 print('--------------------------------------')
-
-print(tor_response.status_code)
-print(normal_response.is_redirect)
