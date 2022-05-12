@@ -20,9 +20,8 @@ telecommunications network.
 - AWS ec2 instance (we want to run the code from different countries to see where the tor infrastructure is better)
 - how we can use the browser?
 ## AFTER
--latency vs number of hops
--
-
+- Latency vs number of hops
+- 
 ## What you need
 
 `brew install tor`
