@@ -19,6 +19,9 @@ telecommunications network.
 - Stability of Tor: return  (time, Mbps) : (time, dl//(time.perf_counter() - start) / 100000)
 - AWS ec2 instance (we want to run the code from different countries to see where the tor infrastructure is better)
 - how we can use the browser?
+## AFTER
+-latency vs number of hops
+-
 
 ## What you need
 
