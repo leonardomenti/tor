@@ -50,7 +50,9 @@ def speed_test(size=5, ipv="ipv4", port=80, tor=False):
             if (tor):
                 plt.plot(t, mbps, "-r", label="tor")
             else:
+                fig = plt.figure()
                 plt.plot(t, mbps, "-b", label="normal connection")
+                fig.suptitle(size, fontsize=20)
             plt.xlabel('Time')
             plt.ylabel('Mbps')
             plt.legend(loc="upper left")
@@ -65,16 +67,7 @@ def speed_test(size=5, ipv="ipv4", port=80, tor=False):
 sizes = [1, 2, 5, 10, 20, 30, 40, 50, 100, 200, 512, 1024]
 
 res = {}
-"""
-print('\n')
-for size in sizes[:2]:
-    n = speed_test(size)
-    t = speed_test(size, tor=True)
-    
-    res[size] = (n,t)
 
-with open('results.json', 'w') as outfile:
-    json.dump(res, outfile)
-"""
-speed_test(5)
-speed_test(5, tor = True)
+for size in sizes:
+    speed_test(size)
+    speed_test(size, tor = True)
