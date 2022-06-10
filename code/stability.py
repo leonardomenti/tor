@@ -71,3 +71,4 @@ res = {}
 for size in sizes:
     speed_test(size)
     speed_test(size, tor = True)
+    
