@@ -16,8 +16,8 @@ versus the normal network.
 
 ## Authors
 
-- **Leonardo Menti**
-- **Jorre De Backer**
+- **Leonardo Menti**: leonardo.menti@estudiantat.upc.edu
+- **Jorre De Backer**: jorre.de.backer@estudiantat.upc.edu
 
 ## What you need
 
