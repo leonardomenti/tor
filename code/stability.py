@@ -1,6 +1,10 @@
-import sys, time, io, requests, json, matplotlib.pyplot as plt
+import io
+import sys
+import time
+import requests
+import matplotlib.pyplot as plt
 
-def speed_test(size=5, ipv="ipv4", port=80, tor=False):
+def stability(size=5, ipv="ipv4", port=80, tor=False):
  
     if size == 1024:
         size = "1GB"
@@ -28,7 +32,7 @@ def speed_test(size=5, ipv="ipv4", port=80, tor=False):
 
         total_length = r.headers.get('content-length')
         dl = 0
-        if total_length is None: # no content length header
+        if total_length is None:
             f.write(r.content)
         else:
             mbps = []
@@ -69,6 +73,6 @@ sizes = [1, 2, 5, 10, 20, 30, 40, 50, 100, 200, 512, 1024]
 res = {}
 
 for size in sizes:
-    speed_test(size)
-    speed_test(size, tor = True)
+    stability(size)
+    stability(size, tor = True)
     

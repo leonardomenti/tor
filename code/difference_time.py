@@ -1,7 +1,10 @@
-import sys, time, io, requests, json, matplotlib.pyplot as plt, numpy as np
+import io
+import sys
+import time
+import requests
+import matplotlib.pyplot as plt, numpy as np
 
-
-def speed_test(size=5, ipv="ipv4", port=80):
+def time_diff(size=5, ipv="ipv4", port=80):
  
     if size == 1024:
         size = "1GB"
@@ -43,19 +46,18 @@ def speed_test(size=5, ipv="ipv4", port=80):
 
     return time.perf_counter() - start
 
-# sizes = [1, 2, 5, 10, 20, 30, 40, 50, 100, 200, 512, 1024]
-
 times = []
 
 for i in range(100):
-    times.append(speed_test(10))
+    times.append(time_diff(10))
 
+# binning
 times = np.array(times)
 q25, q75 = np.percentile(times, [25, 75])
 bin_width = 2 * (q75 - q25) * len(times) ** (-1/3)
 bins = round((times.max() - times.min()) / bin_width)
-print(bins)
 
+# plotting
 fig = plt.figure()
 fig.suptitle('Difference of time', fontsize=20)   
 plt.hist(times, bins=bins, facecolor='blue', alpha=0.5, label="tor", histtype='bar', ec='black', density=False, range=(times.min(), times.max()))
@@ -63,9 +65,4 @@ plt.hist(times, bins=bins, facecolor='blue', alpha=0.5, label="tor", histtype='b
 plt.xlabel('Time')
 plt.ylabel('Frequency')
 plt.legend(loc="upper left")
-#ax = plt.gca()
-#plt.xticks(sizes, sizes)
-#ax.set_xlim([0, xlim+0.5])
-#ax.set_ylim([ymin, ymax])
-
 plt.show()
