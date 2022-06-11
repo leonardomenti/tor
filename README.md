@@ -1,6 +1,6 @@
 # An evaluation of TOR
 
-![tor](./images/tor-logo.jpg)
+![tor](./images/tor-logo.svg.png)
 
 
 Tor (The Onion Router) is a free and open source software that provide
