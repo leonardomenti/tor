@@ -1,7 +1,6 @@
 # An evaluation of TOR
 
-![tor](./images/tor-logo.svg.png =100x20)
-
+<img src="/images/tor-logo.svg.png" width="200">
 
 Tor (The Onion Router) is a free and open source software that provide
 anonymous communication over the internet. It is based on the onion routing
